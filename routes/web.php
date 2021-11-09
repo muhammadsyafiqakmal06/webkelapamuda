@@ -19,6 +19,24 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/proses', function () {
+    return view('proses' , [
+        "title" => "proses"
+    ]);
+});
+
+Route::get('/product', function () {
+    return view('product' , [
+        "title" => "proses"
+    ]);
+});
+
+Route::get('/contact', function () {
+    return view('contact' , [
+        "title" => "contact"
+    ]);
+});
+
 Route::get('/about', function () {
     return view('about', [
         "title" => "About",
@@ -28,60 +46,4 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/blog', function () {
 
-    $products_posts = [
-        [
-            "title" => "Judul Post Pertama",
-            "slug" => "judul-post-pertama",
-            "author" => "Muhammad Syafiq Akmal",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nostrum quaerat doloremque quis odit, recusandae molestias inventore error cupiditate animi asperiores non necessitatibus earum ipsa quam dignissimos reprehenderit sunt consequatur deleniti nobis. Ipsa quod sint, at nemo obcaecati, mollitia fugit totam possimus, molestiae quas sunt consequatur rem expedita a facilis?"
-        ],
-    
-        [
-            "title" => "Judul Post Kedua",
-            "slug" => "judul-post-dua",
-            "author" => "Hanny Handayani Sucinta",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nostrum quaerat doloremque quis odit, recusandae molestias inventore error cupiditate animi asperiores non necessitatibus earum ipsa quam dignissimos reprehenderit sunt consequatur deleniti nobis. Ipsa quod sint, at nemo obcaecati, mollitia fugit totam possimus, molestiae quas sunt consequatur rem expedita a facilis?"
-        ],
-    
-    ];
-
-    return view('posts', [
-        "title" => "Products",
-        "posts" => $products_posts
-    ]);
-});
-
-//halaman single post
-Route::get('posts/{slug}', function ($slug) {
-
-    $products_posts = [
-        [
-            "title" => "Judul Post Pertama",
-            "slug" => "judul-post-pertama",
-            "author" => "Muhammad Syafiq Akmal",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nostrum quaerat doloremque quis odit, recusandae molestias inventore error cupiditate animi asperiores non necessitatibus earum ipsa quam dignissimos reprehenderit sunt consequatur deleniti nobis. Ipsa quod sint, at nemo obcaecati, mollitia fugit totam possimus, molestiae quas sunt consequatur rem expedita a facilis?"
-        ],
-    
-        [
-            "title" => "Judul Post Kedua",
-            "slug" => "judul-post-dua",
-            "author" => "Hanny Handayani Sucinta",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nostrum quaerat doloremque quis odit, recusandae molestias inventore error cupiditate animi asperiores non necessitatibus earum ipsa quam dignissimos reprehenderit sunt consequatur deleniti nobis. Ipsa quod sint, at nemo obcaecati, mollitia fugit totam possimus, molestiae quas sunt consequatur rem expedita a facilis?"
-        ],
-    
-    ];
-
-    $new_post = [];
-    foreach($products_posts as $post){
-        if($post["slug"] === $slug){
-            $new_post = $post;
-        }
-    }
-
-    return view('post', [
-        "title" => "single post",
-        "post" => $new_post
-    ]);
-});

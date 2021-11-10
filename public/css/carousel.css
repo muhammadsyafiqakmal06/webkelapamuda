@@ -3,11 +3,15 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  padding-top: 3rem;
+  padding-top: 0rem;
   padding-bottom: 3rem;
   color: #5a5a5a;
+  width: 100%;
 }
-
+.isi{
+margin-left: 30;
+margin-right: 30;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -24,10 +28,10 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
-  height: 32rem;
+  height: 100%;
+ 
 }
 .carousel-item > img {
-  position: absolute;
   top: 0;
   left: 0;
   min-width: 100%;
@@ -48,8 +52,8 @@ body {
 }
 /* rtl:begin:ignore */
 .marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
+  margin-right: 2rem;
+  margin-left: .2em;
 }
 /* rtl:end:ignore */
 

@@ -27,7 +27,7 @@ Route::get('/proses', function () {
 
 Route::get('/product', function () {
     return view('product' , [
-        "title" => "proses"
+        "title" => "product"
     ]);
 });
 
